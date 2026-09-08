@@ -15,7 +15,9 @@ class UserController extends Controller
     public function __construct(
         private UserRepository $userRepository,
         private UserService    $userService
-    ){}
+    ){
+
+    }
 
     public function index(): View
     {

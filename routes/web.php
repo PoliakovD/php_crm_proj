@@ -5,8 +5,10 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard');
 });
 
-Route::resource('users', UserController::class)->except(['show']);
+Route::middleware('auth.admin')->resource('users', UserController::class)->except(['show']);
 Route::resource('applications', ApplicationController::class);
+
+Auth::routes();

@@ -6,16 +6,20 @@ namespace App\Models;
 use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Http\Request;
 use Illuminate\Notifications\Notifiable;
 
 /**
  * @property int $id
  * @property string $name
+ * @property string $avatar
  * @property string $email
  * @property string $role
+ * @property boolean $status
  * @property \Illuminate\Support\Carbon|null $email_verified_at
  * @property string $password
  * @property string|null $remember_token
@@ -37,9 +41,10 @@ use Illuminate\Notifications\Notifiable;
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User wherePassword($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereRememberToken($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder<static>|User Filters(Request $request)
  * @mixin \Eloquent
  */
-#[Fillable(['name', 'email', 'password', 'role'])]
+#[Fillable(['name', 'email', 'password', 'role', 'status', 'avatar'])]
 #[Hidden(['password', 'remember_token'])]
 class User extends Authenticatable
 {
@@ -78,5 +83,16 @@ class User extends Authenticatable
             default:
                 return 'Оно';
         }
+    }
+
+    public function scopeFilters(Builder $builder, Request $request): Builder
+    {
+        return $builder
+            ->when(!is_null($request->status) && in_array($request->status, [0, 1]), function (Builder $builder) use ($request) {
+                $builder->where('status', $request->status);
+            })
+            ->when($request->search, function (Builder $builder) use ($request) {
+              $builder->where('name', 'like', '%' . $request->search . '%');
+            });
     }
 }

@@ -19,6 +19,7 @@ class UserUpdateRequest extends FormRequest
             'email' => ['required', 'string', 'email', 'min:5', 'max:255', 'unique:users,email,' . $this->route()->parameter('user')->id],
             'name' => ['required', 'string', 'max:255'],
             'role' => ['required', 'string', 'max:255', 'in:admin,user'],
+            'avatar' => ['nullable', 'image', 'mimes:jpeg,jpg,png,webp', 'max:4096'],
         ];
     }
 

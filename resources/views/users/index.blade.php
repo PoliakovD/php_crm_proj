@@ -409,32 +409,33 @@
             </div>
         </div>
 
-        <!-- Фильтры -->
-        <div class="filter-bar">
-            <div class="search-wrap">
-                <i class="fas fa-search"></i>
-                <input type="text" placeholder="Поиск по имени или email...">
-            </div>
-            <select>
-                <option value="">Все статусы</option>
-                <option value="active">Активные</option>
-                <option value="pending">Ожидают</option>
-                <option value="inactive">Неактивные</option>
-            </select>
-            <select>
-                <option value="">Сортировка</option>
-                <option value="name">По имени</option>
-                <option value="email">По email</option>
-                <option value="created">По дате</option>
-            </select>
-            <button class="btn-primary-custom text-sm px-4 py-2" onclick="alert('🔍 Фильтры применены (заглушка)')">
-                <i class="fas fa-filter"></i> Применить
-            </button>
-            <button class="btn-outline-custom text-sm px-4 py-2" onclick="alert('🔄 Фильтры сброшены (заглушка)')">
-                <i class="fas fa-undo"></i> Сбросить
-            </button>
-        </div>
+        <form action="#" method="GET">
+            <!-- Фильтры -->
+            <div class="filter-bar">
+                <div class="search-wrap">
+                    <i class="fas fa-search"></i>
+                    <input name="search" value="{{ request()->search }}" type="text" placeholder="Поиск по имени или email...">
+                </div>
+                <select name="status">
 
+                    <option value="">Все статусы</option>
+                    <option @if(request()->status === 1) selected  @endif value="1">Активные</option>
+                    <option @if(request()->status === 0) selected  @endif value="0">Неактивные</option>
+                </select>
+                <select>
+                    <option value="">Сортировка</option>
+                    <option value="name">По имени</option>
+                    <option value="email">По email</option>
+                    <option value="created">По дате</option>
+                </select>
+                <button class="btn-primary-custom text-sm px-4 py-2" >
+                    <i class="fas fa-filter"></i> Применить
+                </button>
+                <button class="btn-outline-custom text-sm px-4 py-2" >
+                    <i class="fas fa-undo"></i> Сбросить
+                </button>
+            </div>
+        </form>
         <!-- Таблица -->
         <div class="table-wrapper">
             <div class="overflow-x-auto">
@@ -484,7 +485,7 @@
                                 </div>
                             </td>
                             <td>
-                                @if($user->email_verified_at)
+                                @if($user->status)
                                     <span class="status-badge status-active">
                                         <i class="fas fa-circle" style="font-size: 6px;"></i>Активный
                                     </span>
@@ -502,9 +503,9 @@
                             </td>
                             <td>
                                 <div class="flex flex-col">
-                                    <span>{{ $user->created_at->format('d.m.Y') }}</span>
+                                    <span>{{ $user->created_at?->format('d.m.Y') }}</span>
                                     <small
-                                        class="text-gray-400 text-xs">{{ $user->created_at->diffForHumans() }}</small>
+                                        class="text-gray-400 text-xs">{{ $user->created_at?->diffForHumans() }}</small>
                                 </div>
                             </td>
                             <td>

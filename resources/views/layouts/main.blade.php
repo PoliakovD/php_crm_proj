@@ -233,10 +233,10 @@
                     <div class="relative" x-data="{ open: false }">
                         <button @click="open = !open" class="flex items-center gap-2 group">
                             <div class="relative flex-shrink-0">
-                                <img src="https://ui-avatars.com/api/?name=Admin+User&background=6366f1&color=fff&size=40"
+                                <div class="absolute bottom-0 right-0 w-3 h-3 bg-green-400 border-2 border-white rounded-full"></div>
+                                <img src="{{ asset('storage/' . auth()->user()->avatar) }}"
                                      alt="Avatar"
                                      class="w-10 h-10 rounded-full border-2 border-white shadow-md group-hover:border-indigo-400 transition-all">
-                                <div class="absolute bottom-0 right-0 w-3 h-3 bg-green-400 border-2 border-white rounded-full"></div>
                             </div>
                             <div class="hidden lg:block text-left min-w-0">
                                 <p class="text-sm font-semibold text-gray-800 truncate">{{ auth()->user()->name }}</p>

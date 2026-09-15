@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\User\UserStoreRequest;
 use App\Http\Requests\User\UserUpdateRequest;
+use App\Models\ContactType;
 use App\Models\User;
 use App\Repository\User\UserRepository;
 use App\Services\UserService;
@@ -45,7 +46,8 @@ class UserController extends Controller
     public function edit(User $user): View
     {
         return view('users.edit', [
-            'user' => $user->load('applications'),
+            'user' => $user->load(['applications', 'contactTypes']),
+            'contactTypes' => ContactType::all()
         ]);
     }
 

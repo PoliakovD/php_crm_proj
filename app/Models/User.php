@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Http\Request;
@@ -26,6 +27,7 @@ use Illuminate\Notifications\Notifiable;
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Application> $applications
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\ContactType> $contactTypes
  * @property-read int|null $applications_count
  * @property-read \Illuminate\Notifications\DatabaseNotificationCollection<int, \Illuminate\Notifications\DatabaseNotification> $notifications
  * @property-read int|null $notifications_count
@@ -94,5 +96,10 @@ class User extends Authenticatable
             ->when($request->search, function (Builder $builder) use ($request) {
               $builder->where('name', 'like', '%' . $request->search . '%');
             });
+    }
+
+    public function contactTypes(): BelongsToMany
+    {
+        return $this->belongsToMany(ContactType::class)->withPivot('subject');
     }
 }

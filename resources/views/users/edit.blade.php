@@ -8,14 +8,16 @@
             background: white;
             border-radius: 16px;
             padding: 2rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
             border: 1px solid #f1f5f9;
             max-width: 800px;
             margin: 0 auto;
         }
+
         .form-group {
             margin-bottom: 1.5rem;
         }
+
         .form-label {
             display: block;
             font-size: 0.875rem;
@@ -23,10 +25,12 @@
             color: #1e293b;
             margin-bottom: 0.5rem;
         }
+
         .form-label .required {
             color: #ef4444;
             margin-left: 2px;
         }
+
         .form-control {
             width: 100%;
             padding: 0.625rem 1rem;
@@ -38,26 +42,32 @@
             color: #1e293b;
             outline: none;
         }
+
         .form-control:focus {
             background: white;
             border-color: #6366f1;
             box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
         }
+
         .form-control.is-invalid {
             border-color: #ef4444;
         }
+
         .form-control.is-invalid:focus {
             box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
         }
+
         .form-control:disabled {
             background: #f1f5f9;
             cursor: not-allowed;
         }
+
         .form-text {
             font-size: 0.8rem;
             color: #94a3b8;
             margin-top: 0.375rem;
         }
+
         .form-error {
             font-size: 0.8rem;
             color: #ef4444;
@@ -66,6 +76,7 @@
             align-items: center;
             gap: 0.25rem;
         }
+
         .form-select {
             width: 100%;
             padding: 0.625rem 1rem;
@@ -82,14 +93,17 @@
             background-position: right 1rem center;
             padding-right: 2.5rem;
         }
+
         .form-select:focus {
             background-color: white;
             border-color: #6366f1;
             box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
         }
+
         .form-select.is-invalid {
             border-color: #ef4444;
         }
+
         .form-actions {
             display: flex;
             gap: 1rem;
@@ -98,6 +112,7 @@
             margin-top: 0.5rem;
             flex-wrap: wrap;
         }
+
         .btn-cancel {
             background: transparent;
             border: 1px solid #e2e8f0;
@@ -112,10 +127,12 @@
             gap: 0.5rem;
             text-decoration: none;
         }
+
         .btn-cancel:hover {
             background: #f8fafc;
             border-color: #94a3b8;
         }
+
         .btn-submit {
             background: linear-gradient(135deg, #6366f1, #8b5cf6);
             border: none;
@@ -132,15 +149,18 @@
             justify-content: center;
             min-width: 120px;
         }
+
         .btn-submit:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
         }
+
         .btn-submit:disabled {
             opacity: 0.6;
             cursor: not-allowed;
             transform: none;
         }
+
         .page-header {
             display: flex;
             align-items: center;
@@ -148,12 +168,14 @@
             margin-bottom: 1.5rem;
             flex-wrap: wrap;
         }
+
         .page-header h1 {
             font-size: 1.5rem;
             font-weight: 700;
             color: #1e293b;
             margin: 0;
         }
+
         .page-header .breadcrumb {
             display: flex;
             align-items: center;
@@ -161,13 +183,16 @@
             font-size: 0.875rem;
             color: #94a3b8;
         }
+
         .page-header .breadcrumb a {
             color: #6366f1;
             text-decoration: none;
         }
+
         .page-header .breadcrumb a:hover {
             text-decoration: underline;
         }
+
         .avatar-preview {
             width: 80px;
             height: 80px;
@@ -182,14 +207,17 @@
             background: linear-gradient(135deg, #6366f1, #8b5cf6);
             overflow: hidden;
         }
+
         .avatar-preview img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+
         .password-toggle {
             position: relative;
         }
+
         .password-toggle .toggle-btn {
             position: absolute;
             right: 12px;
@@ -201,14 +229,17 @@
             cursor: pointer;
             padding: 4px;
         }
+
         .password-toggle .toggle-btn:hover {
             color: #6366f1;
         }
+
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 1rem;
         }
+
         .user-status-badge {
             display: inline-flex;
             align-items: center;
@@ -218,34 +249,122 @@
             font-size: 0.75rem;
             font-weight: 600;
         }
+
         .user-status-badge.active {
             background: #dcfce7;
             color: #166534;
         }
+
         .user-status-badge.inactive {
             background: #fee2e2;
             color: #991b1b;
         }
+
         .user-status-badge.pending {
             background: #fef3c7;
             color: #92400e;
         }
+
+        .contact-type-row {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.625rem;
+            background: #eef2ff;
+            border: 1px solid #e0e7ff;
+            border-radius: 10px;
+            margin-bottom: 0.5rem;
+            transition: all 0.2s;
+        }
+
+        .contact-type-row:hover {
+            background: #e0e7ff;
+        }
+
+        .contact-type-row .icon-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #6366f1;
+            color: white;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+
+        .btn-remove-row {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #fee2e2;
+            color: #dc2626;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+
+        .btn-remove-row:hover {
+            background: #dc2626;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .btn-add-row {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.625rem 1.25rem;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #34d399, #10b981);
+            color: white;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-top: 0.5rem;
+        }
+
+        .btn-add-row:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.35);
+        }
+
+        .btn-add-row:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
         @media (max-width: 640px) {
             .form-row {
                 grid-template-columns: 1fr;
             }
+
             .form-container {
                 padding: 1rem;
             }
+
             .form-actions {
                 flex-direction: column-reverse;
             }
+
             .btn-submit {
                 width: 100%;
             }
+
             .btn-cancel {
                 width: 100%;
                 justify-content: center;
+            }
+
+            .contact-type-row {
+                flex-wrap: wrap;
             }
         }
     </style>
@@ -254,19 +373,12 @@
 @section('content')
     <div class="px-0">
         @if(session('success'))
-            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4" role="alert">
                 <strong class="font-bold">Успешно!</strong>
                 <span class="block sm:inline">{{ session('success') }}</span>
-                <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
-            <svg class="fill-current h-6 w-6 text-green-500" role="button" xmlns="http://www.w3.org/2000/svg"
-                 viewBox="0 0 20 20">
-                <title>Закрыть</title>
-                <path
-                    d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/>
-            </svg>
-        </span>
             </div>
         @endif
+
         <!-- Хлебные крошки -->
         <div class="page-header">
             <div>
@@ -307,12 +419,14 @@
                         @endif
                     </div>
                     <div class="flex justify-center items-center gap-4">
-                        <label for="avatar" class="cursor-pointer text-sm text-indigo-600 hover:text-indigo-800 font-medium">
+                        <label for="avatar"
+                               class="cursor-pointer text-sm text-indigo-600 hover:text-indigo-800 font-medium">
                             <i class="fas fa-camera mr-1"></i>
                             Загрузить новый аватар
                         </label>
                         @if($user->avatar)
-                            <label for="remove_avatar" class="cursor-pointer text-sm text-red-600 hover:text-red-800 font-medium">
+                            <label for="remove_avatar"
+                                   class="cursor-pointer text-sm text-red-600 hover:text-red-800 font-medium">
                                 <i class="fas fa-trash-alt mr-1"></i>
                                 Удалить
                             </label>
@@ -320,7 +434,8 @@
                         @endif
                         <input type="file" id="avatar" name="avatar" class="hidden" accept="image/*">
                     </div>
-                    <p class="text-xs text-gray-400 mt-1">Рекомендуемый размер: 200x200px. Оставьте пустым, чтобы сохранить текущий аватар</p>
+                    <p class="text-xs text-gray-400 mt-1">Рекомендуемый размер: 200x200px. Оставьте пустым, чтобы
+                        сохранить текущий аватар</p>
                 </div>
 
                 <!-- Основная информация -->
@@ -414,15 +529,15 @@
                     <div class="form-group">
                         <label for="role" class="form-label">Роль <span class="required">*</span></label>
                         <select id="role" name="role" class="form-select @error('role') is-invalid @enderror">
-                          @foreach(\App\Enums\RoleListEnum::label() as $roleKey => $role)
-                                <option value="{{ $roleKey }}" {{ old('role', $user->role ?? 'user') == 'user' ? 'selected' : '' }}>
+                            @foreach(\App\Enums\RoleListEnum::label() as $roleKey => $role)
+                                <option value="{{ $roleKey }}" {{ old('role', $user->role ?? 'user') == $roleKey ? 'selected' : '' }}>
                                     {{ $role->value }}
                                 </option>
-                          @endforeach
+                            @endforeach
                         </select>
                         @error('role')
                         <div class="form-error">
-                            <i class="xfas fa-exclamation-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
                             {{ $message }}
                         </div>
                         @enderror
@@ -487,6 +602,68 @@
                     </div>
                 </div>
 
+                <!-- Типы контактов (many-to-many) -->
+                <div class="form-group">
+                    <label class="form-label">Типы контактов</label>
+
+                    <div id="contactTypesList">
+                        @foreach($user->contactTypes as $index => $contactType)
+                            @continue(!$contactType)
+                            <div class="contact-type-row" data-index="{{ $index }}">
+                                <span class="icon-badge">
+                                    <i class="fas fa-tag"></i>
+                                </span>
+
+                                <select name="contact_types[{{ $index }}][id]"
+                                        class="form-select flex-1"
+                                        required>
+                                    <option value="">— Тип —</option>
+                                    @foreach($contactTypes as $type)
+                                        <option value="{{ $type->id }}" @selected($type->id == $contactType->id)>
+                                            {{ mb_ucfirst(mb_strtolower($type->type)) }}
+                                        </option>
+                                    @endforeach
+                                </select>
+
+                                <input type="text"
+                                       name="contact_types[{{ $index }}][value]"
+                                       class="form-control flex-1"
+                                       value="{{ $contactType->pivot->subject ?? '' }}"
+                                       placeholder="Номер / ссылка / значение">
+
+                                <button type="button"
+                                        class="btn-remove-row js-remove-contact-type"
+                                        title="Удалить">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                            </div>
+                        @endforeach
+                    </div>
+
+                    @error('contact_types')
+                    <div class="form-error">
+                        <i class="fas fa-exclamation-circle"></i>
+                        {{ $message }}
+                    </div>
+                    @enderror
+                    @foreach($errors->get('contact_types.*.id') as $msgs)
+                        @foreach($msgs as $msg)
+                            <div class="form-error"><i class="fas fa-exclamation-circle"></i> {{ $msg }}</div>
+                        @endforeach
+                    @endforeach
+
+                    <button type="button" id="addContactTypeBtn" class="btn-add-row">
+                        <i class="fas fa-plus"></i>
+                        Добавить тип контакта
+                    </button>
+
+                    <div class="form-text">
+                        Нажмите <i class="fas fa-plus text-emerald-500"></i> чтобы добавить,
+                        <i class="fas fa-minus text-red-500"></i> — чтобы удалить.
+                        Изменения сохранятся вместе с формой.
+                    </div>
+                </div>
+
                 <!-- Комментарий -->
                 <div class="form-group">
                     <label for="notes" class="form-label">Комментарий</label>
@@ -532,65 +709,61 @@
             </form>
         </div>
 
-            <div class="min-h-screen bg-gray-50 py-8 px-4">
-                {{-- Красивый заголовок по центру --}}
-                <div class="text-center mb-8">
-                    <h1 class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 inline-block">
-                        Заявки
-                    </h1>
-                    <div class="mt-3 flex items-center justify-center gap-2">
-                        <span class="h-1 w-12 rounded-full bg-blue-500"></span>
-                        <span class="h-1 w-3 rounded-full bg-indigo-500"></span>
-                        <span class="h-1 w-1.5 rounded-full bg-purple-500"></span>
-                    </div>
-                    <p class="mt-4 text-gray-500 text-sm md:text-base">
-                        Всего заявок: <span class="font-semibold text-gray-700">{{ $user->applications->count() }}</span>
-                    </p>
+        <!-- Заявки пользователя -->
+        <div class="min-h-screen bg-gray-50 py-8 px-4 mt-8 rounded-2xl">
+            <div class="text-center mb-8">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 inline-block">
+                    Заявки
+                </h1>
+                <div class="mt-3 flex items-center justify-center gap-2">
+                    <span class="h-1 w-12 rounded-full bg-blue-500"></span>
+                    <span class="h-1 w-3 rounded-full bg-indigo-500"></span>
+                    <span class="h-1 w-1.5 rounded-full bg-purple-500"></span>
                 </div>
-
-                {{-- Сетка карточек --}}
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-                    @foreach($user->applications as $application)
-                        <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-gray-100">
-                            {{-- Заголовок с индикатором статуса --}}
-                            <div class="p-6 pb-4">
-                                <div class="flex items-start justify-between gap-4 mb-3">
-                                    <h2 class="text-xl font-bold text-gray-800 leading-tight">
-                                        {{ $application->title }}
-                                    </h2>
-
-                                    @if($application->status == 1)
-                                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-700 whitespace-nowrap">
-                                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                                Активный
-                            </span>
-                                    @else
-                                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-600 whitespace-nowrap">
-                                <span class="w-2 h-2 rounded-full bg-gray-400"></span>
-                                Не активный
-                            </span>
-                                    @endif
-                                </div>
-
-                                {{-- Описание --}}
-                                <p class="text-gray-600 text-sm leading-relaxed line-clamp-3">
-                                    {{ $application->description }}
-                                </p>
-                            </div>
-
-                            {{-- Футер карточки --}}
-                            <div class="px-6 py-4 bg-gray-50 border-t border-gray-100 flex items-center justify-between">
-                    <span class="text-xs text-gray-400">
-                        ID: #{{ $application->id }}
-                    </span>
-                                <button class="text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors">
-                                    Подробнее →
-                                </button>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
+                <p class="mt-4 text-gray-500 text-sm md:text-base">
+                    Всего заявок: <span class="font-semibold text-gray-700">{{ $user->applications->count() }}</span>
+                </p>
             </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+                @foreach($user->applications as $application)
+                    <div class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-gray-100">
+                        <div class="p-6 pb-4">
+                            <div class="flex items-start justify-between gap-4 mb-3">
+                                <h2 class="text-xl font-bold text-gray-800 leading-tight">
+                                    {{ $application->title }}
+                                </h2>
+
+                                @if($application->status == 1)
+                                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-700 whitespace-nowrap">
+                                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                                        Активный
+                                    </span>
+                                @else
+                                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-600 whitespace-nowrap">
+                                        <span class="w-2 h-2 rounded-full bg-gray-400"></span>
+                                        Не активный
+                                    </span>
+                                @endif
+                            </div>
+
+                            <p class="text-gray-600 text-sm leading-relaxed line-clamp-3">
+                                {{ $application->description }}
+                            </p>
+                        </div>
+
+                        <div class="px-6 py-4 bg-gray-50 border-t border-gray-100 flex items-center justify-between">
+                            <span class="text-xs text-gray-400">
+                                ID: #{{ $application->id }}
+                            </span>
+                            <button class="text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors">
+                                Подробнее →
+                            </button>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
 
         <!-- Подсказки -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-4 max-w-[800px] mx-auto">
@@ -624,6 +797,34 @@
         </div>
 
     </div>
+
+    {{-- Шаблон строки типа контакта для JS --}}
+    <template id="contactTypeRowTemplate">
+        <div class="contact-type-row">
+            <span class="icon-badge">
+                <i class="fas fa-tag"></i>
+            </span>
+
+            <select class="form-select flex-1" required>
+                <option value="">— Тип —</option>
+                @foreach($contactTypes as $type)
+                    <option value="{{ $type->id }}">
+                        {{ mb_ucfirst(mb_strtolower($type->type)) }}
+                    </option>
+                @endforeach
+            </select>
+
+            <input type="text"
+                   class="form-control flex-1"
+                   placeholder="Номер / ссылка / значение">
+
+            <button type="button"
+                    class="btn-remove-row js-remove-contact-type"
+                    title="Удалить">
+                <i class="fas fa-minus"></i>
+            </button>
+        </div>
+    </template>
 @endsection
 
 @push('scripts')
@@ -645,11 +846,11 @@
         }
 
         // Превью аватара
-        document.getElementById('avatar')?.addEventListener('change', function(e) {
+        document.getElementById('avatar')?.addEventListener('change', function (e) {
             const file = e.target.files[0];
             if (file) {
                 const reader = new FileReader();
-                reader.onload = function(e) {
+                reader.onload = function (e) {
                     const preview = document.getElementById('avatarPreview');
                     preview.innerHTML = `<img src="${e.target.result}" class="w-full h-full rounded-full object-cover">`;
                 }
@@ -658,7 +859,7 @@
         });
 
         // Удаление аватара
-        document.getElementById('remove_avatar')?.addEventListener('change', function(e) {
+        document.getElementById('remove_avatar')?.addEventListener('change', function (e) {
             if (this.checked) {
                 if (confirm('Вы уверены, что хотите удалить аватар?')) {
                     const preview = document.getElementById('avatarPreview');
@@ -668,5 +869,46 @@
                 }
             }
         });
+
+        // === Типы контактов (many-to-many) ===
+        (function () {
+            const list   = document.getElementById('contactTypesList');
+            const tpl    = document.getElementById('contactTypeRowTemplate');
+            const addBtn = document.getElementById('addContactTypeBtn');
+
+            function reindex() {
+                [...list.querySelectorAll('.contact-type-row')].forEach((row, i) => {
+                    row.dataset.index = i;
+
+                    const select = row.querySelector('select');
+                    const input  = row.querySelector('input[type="text"]');
+
+                    select.name = `contact_types[${i}][id]`;
+                    input.name  = `contact_types[${i}][value]`;
+                });
+            }
+
+            function bindRemove(row) {
+                row.querySelector('.js-remove-contact-type')
+                    .addEventListener('click', () => {
+                        row.remove();
+                        reindex();
+                    });
+            }
+
+            // Привязка к существующим строкам
+            list.querySelectorAll('.contact-type-row').forEach(bindRemove);
+
+            // Добавление строки
+            addBtn.addEventListener('click', () => {
+                const fragment = tpl.content.cloneNode(true);
+                const row = fragment.querySelector('.contact-type-row');
+                list.appendChild(row);
+                bindRemove(row);
+                reindex();
+            });
+
+            reindex();
+        })();
     </script>
 @endpush

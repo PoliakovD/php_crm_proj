@@ -16,15 +16,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-         User::factory(50)
-             ->has(
-                 Application::factory()->count(10),'applications'
-             )
-             ->create();
-
-//        User::factory()->create([
-//            'name' => 'Test User',
-//            'email' => 'test@example.com',
-//        ]);
+        $this->call([
+            ContactTypeSeeder::class,
+        ]);
+        if (User::count() < 30) {
+            User::factory(50)
+                ->has(
+                    Application::factory()->count(10),'applications'
+                )
+                ->create();
+        }
     }
 }

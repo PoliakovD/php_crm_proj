@@ -20,6 +20,8 @@ class UserUpdateRequest extends FormRequest
             'name' => ['required', 'string', 'max:255'],
             'role' => ['required', 'string', 'max:255', 'in:admin,user'],
             'avatar' => ['nullable', 'image', 'mimes:jpeg,jpg,png,webp', 'max:4096'],
+            'contact_types' => ['required', 'array'],
+            'contact_types.*.id' => ['integer', 'exists:contact_types,id'],
         ];
     }
 

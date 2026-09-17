@@ -29,7 +29,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Application whereUserId($value)
  * @mixin \Eloquent
  */
-#[Fillable('title', 'description', 'user_id', 'status')]
+#[Fillable('title', 'description', 'user_id', 'status', 'department_id')]
 class Application extends Model
 {
     use HasFactory;
@@ -41,5 +41,10 @@ class Application extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function department(): BelongsTo
+    {
+        return $this->belongsTo(Department::class);
     }
 }

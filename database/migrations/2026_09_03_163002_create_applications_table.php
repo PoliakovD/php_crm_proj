@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('applications', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('department_id')->constrained();
             $table->string('title');
             $table->text('description')->nullable();
             $table->unsignedTinyInteger('status')->default(0);

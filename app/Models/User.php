@@ -94,12 +94,20 @@ class User extends Authenticatable
                 $builder->where('status', $request->status);
             })
             ->when($request->search, function (Builder $builder) use ($request) {
-              $builder->where('name', 'like', '%' . $request->search . '%');
+                $builder->where('name', 'like', '%' . $request->search . '%');
             });
     }
 
     public function contactTypes(): BelongsToMany
     {
         return $this->belongsToMany(ContactType::class)->withPivot('subject');
+    }
+
+    public function getAvatarAttribute(): ?string
+    {
+        if ($this->attributes['avatar']) {
+            return url('storage/avatars/' . $this->attributes['avatar']);
+        }
+        return null;
     }
 }

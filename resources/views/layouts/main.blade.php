@@ -234,7 +234,7 @@
                         <button @click="open = !open" class="flex items-center gap-2 group">
                             <div class="relative flex-shrink-0">
                                 <div class="absolute bottom-0 right-0 w-3 h-3 bg-green-400 border-2 border-white rounded-full"></div>
-                                <img src="{{ asset('storage/' . auth()->user()->avatar) }}"
+                                <img src="{{auth()->user()->avatar }}"
                                      alt="Avatar"
                                      class="w-10 h-10 rounded-full border-2 border-white shadow-md group-hover:border-indigo-400 transition-all">
                             </div>
@@ -253,7 +253,7 @@
 
                             <div class="px-4 py-4 bg-gradient-to-r from-indigo-50 to-purple-50 border-b border-gray-100">
                                 <div class="flex items-center gap-3">
-                                    <img src="https://ui-avatars.com/api/?name=Admin+User&background=6366f1&color=fff&size=40"
+                                    <img src="{{ auth()->user()->avatar }}"
                                          alt="Avatar" class="w-12 h-12 rounded-full border-2 border-white shadow flex-shrink-0">
                                     <div class="min-w-0">
                                         <p class="font-semibold text-gray-800 truncate">{{ auth()->user()->name }}</p>

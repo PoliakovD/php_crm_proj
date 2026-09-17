@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Application;
+use App\Models\Department;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -18,6 +19,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             ContactTypeSeeder::class,
+            DepartmentSeeder::class
         ]);
         if (User::count() < 30) {
             User::factory(50)

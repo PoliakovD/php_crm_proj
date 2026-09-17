@@ -413,7 +413,7 @@
                 <div class="text-center mb-6">
                     <div class="avatar-preview" id="avatarPreview">
                         @if($user->avatar)
-                            <img src="{{ asset('storage/' . $user->avatar) }}" alt="{{ $user->name }}">
+                            <img src="{{  $user->avatar }}" alt="{{ $user->name }}">
                         @else
                             <i class="fas fa-user"></i>
                         @endif

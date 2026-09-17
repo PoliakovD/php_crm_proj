@@ -46,7 +46,7 @@ class UserRepository implements UserRepositoryInterface
         $user->email = $userUpdateRequest->email;
         $user->role = $userUpdateRequest->role;
         if ($userUpdateRequest->hasFile('avatar')) {
-            $user->avatar = $userUpdateRequest->file('avatar')->store('avatars', 'public');
+            $user->avatar = last(explode('/', $userUpdateRequest->file('avatar')->store('avatars', 'public')));
         }
         $user->save();
 

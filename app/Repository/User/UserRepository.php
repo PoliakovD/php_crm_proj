@@ -24,7 +24,14 @@ class UserRepository implements UserRepositoryInterface
         $validated = $userStoreRequest->validated();
 
         $validated['password'] = Hash::make($userStoreRequest->password);
-        return User::query()->create($validated);
+
+        $user = User::create($validated);
+
+        if ($userStoreRequest->file('avatar')) {
+            $user->avatar = last(explode('/', $userStoreRequest->file('avatar')->store('avatars', 'public')));
+            $user->save();
+        }
+        return $user;
     }
 
     public function update(UserUpdateRequest $userUpdateRequest, User $user): ?User
@@ -45,7 +52,8 @@ class UserRepository implements UserRepositoryInterface
         $user->name = $userUpdateRequest->name;
         $user->email = $userUpdateRequest->email;
         $user->role = $userUpdateRequest->role;
-        if ($userUpdateRequest->hasFile('avatar')) {
+        if ($userUpdateRequest->file('avatar')) {
+            $user->removeAvatar();
             $user->avatar = last(explode('/', $userUpdateRequest->file('avatar')->store('avatars', 'public')));
         }
         $user->save();
@@ -55,6 +63,7 @@ class UserRepository implements UserRepositoryInterface
 
     public function destroy(User $user): ?bool
     {
+        $user->removeAvatar();
         return $user->delete();
     }
 }

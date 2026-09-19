@@ -69,7 +69,6 @@ class UserController extends Controller
             DB::rollBack();
             Log::error($exception->getMessage());
         }
-
         return response()->json([
             'message' => $exception->getMessage()
         ], $exception->getCode());

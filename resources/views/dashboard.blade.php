@@ -135,13 +135,13 @@
                 </span>
                 </a>
 
-                <a href="#" class="group bg-white rounded-2xl p-6 border border-slate-100 hover:border-purple-200 hover:shadow-xl transition-all">
+                <a href="{{ route('gallery.index') }}" class="group bg-white rounded-2xl p-6 border border-slate-100 hover:border-purple-200 hover:shadow-xl transition-all">
                     <div class="w-14 h-14 rounded-xl bg-purple-50 group-hover:bg-purple-600 flex items-center justify-center mb-5 transition-colors">
                         <i class="fas fa-images text-purple-600 group-hover:text-white text-xl transition-colors"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-800 mb-2">Медиатека</h3>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">Моя галерея</h3>
                     <p class="text-sm text-slate-500 leading-relaxed mb-4">
-                        Загружайте изображения, видео и файлы с превью и тегами.
+                        Загружайте изображения и управляйте тем, какие из них публичные.
                     </p>
                     <span class="text-sm font-semibold text-purple-600 inline-flex items-center gap-1 group-hover:gap-2 transition-all">
                     Открыть <i class="fas fa-arrow-right text-xs"></i>

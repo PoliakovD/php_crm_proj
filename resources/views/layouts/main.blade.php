@@ -276,6 +276,10 @@
                             @endif
 
                             <div class="py-2">
+                                <a href="{{ route('gallery.index') }}" class="flex items-center px-4 py-3 hover:bg-indigo-50 transition-colors group">
+                                    <i class="fas fa-images w-6 text-indigo-500 group-hover:text-indigo-700"></i>
+                                    <span class="text-sm text-gray-700 group-hover:text-indigo-700">Моя галерея</span>
+                                </a>
                                 <a href="#" class="flex items-center px-4 py-3 hover:bg-indigo-50 transition-colors group">
                                     <i class="fas fa-user w-6 text-indigo-500 group-hover:text-indigo-700"></i>
                                     <span class="text-sm text-gray-700 group-hover:text-indigo-700">Мой профиль</span>

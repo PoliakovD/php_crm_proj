@@ -32,6 +32,7 @@ use Illuminate\Support\Facades\File;
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Application> $applications
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\ContactType> $contactTypes
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Image> $images
  * @property-read int|null $applications_count
  * @property-read \Illuminate\Notifications\DatabaseNotificationCollection<int, \Illuminate\Notifications\DatabaseNotification> $notifications
  * @property-read int|null $notifications_count
@@ -67,6 +68,11 @@ class User extends Authenticatable
     public function applications(): HasMany
     {
         return $this->hasMany(Application::class);
+    }
+
+    public function images(): HasMany
+    {
+        return $this->hasMany(Image::class);
     }
 
     public function isAdmin(): bool

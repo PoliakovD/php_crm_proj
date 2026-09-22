@@ -9,6 +9,6 @@ Route::get('/', function () {
 });
 
 Route::middleware('auth.admin')->resource('users', UserController::class)->except(['show']);
-Route::resource('applications', ApplicationController::class);
+Route::resource('applications', ApplicationController::class)->except(['show']);
 
 Auth::routes();

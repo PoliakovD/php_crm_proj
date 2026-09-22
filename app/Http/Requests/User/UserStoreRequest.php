@@ -4,6 +4,7 @@ namespace App\Http\Requests\User;
 
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
+use App\Rules\ContactSubject;
 
 class UserStoreRequest extends FormRequest
 {
@@ -16,13 +17,22 @@ class UserStoreRequest extends FormRequest
     {
         return [
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'email' => ['required', 'string', 'email', 'min:5', 'max:255', 'unique:users'],
-            'name' => ['required', 'string', 'max:255'],
-            'role' => ['required', 'string', 'in:admin,user'],
-            'avatar' => ['nullable', 'image', 'mimes:jpeg,jpg,png,webp', 'max:4096'],
-            'phone' => ['nullable', 'string', 'max:255'],
+            'email'    => ['required', 'string', 'email', 'min:5', 'max:255', 'unique:users'],
+            'name'     => ['required', 'string', 'max:255'],
+            'role'     => ['required', 'string', 'in:admin,user'],
+            'avatar'   => ['nullable', 'image', 'mimes:jpeg,jpg,png,webp', 'max:4096'],
+
+            // Контакты
+            'contact_types'              => ['sometimes', 'array'],
+            'contact_types.*.id'         => ['required', 'integer', 'exists:contact_types,id'],
+            'contact_types.*.subject'    => [
+                'required', 'string', 'max:255',
+                new ContactSubject(),
+            ],
+
+            'phone'    => ['nullable', 'string', 'max:255'],
             'position' => ['nullable', 'string', 'max:255'],
-            'notes' => ['nullable', 'string'],
+            'notes'    => ['nullable', 'string'],
         ];
     }
 
@@ -82,6 +92,15 @@ class UserStoreRequest extends FormRequest
             'phone'    => 'Телефон',
             'position' => 'Должность',
             'notes'    => 'Комментарий',
+            'contact_types.array'               => 'Поле «Контакты» должно быть массивом.',
+            'contact_types.*.id.required'       => 'Укажите тип контакта.',
+            'contact_types.*.id.integer'        => 'Тип контакта должен быть числом.',
+            'contact_types.*.id.exists'         => 'Такого типа контакта не существует.',
+
+            // contact_types.*.subject
+            'contact_types.*.subject.required'  => 'Введите значение контакта.',
+            'contact_types.*.subject.string'    => 'Значение контакта должно быть строкой.',
+            'contact_types.*.subject.max'       => 'Значение контакта не должно превышать :max символов.',
         ];
     }
 }

@@ -19,7 +19,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             ContactTypeSeeder::class,
-            DepartmentSeeder::class
+            DepartmentSeeder::class,
+            ApplicationSeeder::class,
         ]);
         if (User::count() < 30) {
             User::factory(50)

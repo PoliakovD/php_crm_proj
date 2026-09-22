@@ -20,6 +20,9 @@ class UserStoreRequest extends FormRequest
             'name' => ['required', 'string', 'max:255'],
             'role' => ['required', 'string', 'in:admin,user'],
             'avatar' => ['nullable', 'image', 'mimes:jpeg,jpg,png,webp', 'max:4096'],
+            'phone' => ['nullable', 'string', 'max:255'],
+            'position' => ['nullable', 'string', 'max:255'],
+            'notes' => ['nullable', 'string'],
         ];
     }
 
@@ -52,6 +55,17 @@ class UserStoreRequest extends FormRequest
             'role.required' => 'Поле «Роль» обязательно для заполнения.',
             'role.string'   => 'Поле «Роль» должно быть строкой.',
             'role.in'       => 'Роль должна быть одной из: :values.',
+
+            // Поле phone
+            'phone.string' => 'Поле «Телефон» должно быть строкой.',
+            'phone.max'    => 'Телефон не должен превышать :max символов.',
+
+            // Поле position
+            'position.string' => 'Поле «Должность» должно быть строкой.',
+            'position.max'    => 'Должность не должна превышать :max символов.',
+
+            // Поле notes
+            'notes.string' => 'Поле «Комментарий» должно быть строкой.',
         ];
     }
 
@@ -65,6 +79,9 @@ class UserStoreRequest extends FormRequest
             'email'    => 'Email',
             'name'     => 'Имя',
             'role'     => 'Роль',
+            'phone'    => 'Телефон',
+            'position' => 'Должность',
+            'notes'    => 'Комментарий',
         ];
     }
 }

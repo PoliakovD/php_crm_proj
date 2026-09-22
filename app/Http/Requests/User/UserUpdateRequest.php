@@ -22,6 +22,9 @@ class UserUpdateRequest extends FormRequest
             'avatar' => ['nullable', 'image', 'mimes:jpeg,jpg,png,webp', 'max:4096'],
             'contact_types' => ['sometimes', 'array'],
             'contact_types.*.id' => ['integer', 'exists:contact_types,id'],
+            'phone' => ['nullable', 'string', 'max:255'],
+            'position' => ['nullable', 'string', 'max:255'],
+            'notes' => ['nullable', 'string'],
         ];
     }
 

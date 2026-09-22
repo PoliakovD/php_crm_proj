@@ -22,6 +22,9 @@ use Illuminate\Support\Facades\File;
  * @property string $email
  * @property string $role
  * @property boolean $status
+ * @property string|null $phone
+ * @property string|null $position
+ * @property string|null $notes
  * @property \Illuminate\Support\Carbon|null $email_verified_at
  * @property string $password
  * @property string|null $remember_token
@@ -47,7 +50,7 @@ use Illuminate\Support\Facades\File;
  * @method static \Illuminate\Database\Eloquent\Builder<static>|User Filters(Request $request)
  * @mixin \Eloquent
  */
-#[Fillable(['name', 'email', 'password', 'role', 'status', 'avatar'])]
+#[Fillable(['name', 'email', 'password', 'role', 'status', 'avatar', 'phone', 'position', 'notes'])]
 #[Hidden(['password', 'remember_token'])]
 class User extends Authenticatable
 {
